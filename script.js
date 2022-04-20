@@ -45,8 +45,8 @@ const rollDiceDisabledHandler = function () {
 // Reset active button handler
 const resetActiveBtnHandler = function () {
   for (const btn of buttons) {
-    if (btn.style.backgroundColor === "rgb(202, 209, 78)")
-      btn.style.backgroundColor = "white";
+    if (btn.style.backgroundColor === "black")
+      btn.style.backgroundColor = "red";
   }
 };
 
@@ -140,7 +140,8 @@ const callDiceChangeHandler = function () {
 //Button click handler
 const onButtonClickHandler = function () {
   if (startGame === true) {
-    this.style.backgroundColor = "rgb(202, 209, 78)";
+    this.style.backgroundColor = "red";
+    this.style.borderLeft = "4px solid white";
     showSelected.textContent = this.textContent;
     selectedNumber = Number(this.textContent);
     disabled = true;
