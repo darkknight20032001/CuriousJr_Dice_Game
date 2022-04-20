@@ -7,6 +7,7 @@
 }
 
 body {
+  font-family: "Handlee", cursive;
   background-color: black;
   color: white;
   text-shadow: 0px 0px 10px red;
@@ -29,13 +30,31 @@ body {
   display: flex;
   justify-content: space-around;
 }
-
+.header_selected p {
+  padding: 10px;
+  box-shadow: 0px 0px 10px white;
+  border: 2px solid white;
+  position: absolute;
+  top: 15rem;
+  left: 4rem;
+  border-radius: 20px;
+}
+.header_img{
+  border: 2px solid white;
+  
+}
 .header_img img,
 .content_btn button {
   width: 5rem;
   height: 5rem;
 }
-
+.header_score {
+  box-shadow: 0px 0px 10px violet;
+  padding: 10px;
+  position: absolute;
+  top: 15rem;
+  left: 60rem;
+}
 .high_score {
   margin-top: 10px;
 }
@@ -68,7 +87,6 @@ body {
 
 .footer {
   text-align: center;
-
 }
 
 .footer h2,

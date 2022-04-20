@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Roll Dice Game</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="game">
-
-        <!-- header -->
-        <div class="header">
-            <div class="header_selected">
-                <p>Selected Variable: <span></span></p>
-            </div>
-            <div class="header_img">
-                <img src="./Images/dice-1.png" alt="dice" class="dice" />
-            </div>
-            <div class="header_score">
-                <p class="score">Score: <span></span></p>
-                <h3 class="high_score">High Score: <span></span></h3>
-            </div>
+      <!-- header -->
+      <div class="header">
+        <div class="header_selected">
+          <p>Selected Variable: <span></span></p>
         </div>
-
-
-        <!-- content -->
-        <div class="content_btn">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
+        <div class="header_img">
+          <img src="./Images/dice-1.png" alt="dice" class="dice" />
         </div>
-
-
-        <!-- footer -->
-        <div class="footer">
-            <h3>The dice will change in <span>0</span> seconds</h3>
-            <h2></h2>
-            <div>
-                <button class="play play_btn">Play</button>
-                <button class="play roll_dice">Roll Dice</button>
-            </div>
+        <div class="header_score">
+          <p class="score">Score: <span></span></p>
+          <h3 class="high_score">High Score: <span></span></h3>
         </div>
+      </div>
 
+      <!-- content -->
+      <div class="content_btn">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+      </div>
+
+      <!-- footer -->
+      <div class="footer">
+        <h3>The dice will change in <span>0</span> seconds</h3>
+        <h2></h2>
+        <div>
+          <button class="play play_btn">Play</button>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

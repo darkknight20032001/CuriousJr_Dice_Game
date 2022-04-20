@@ -7,7 +7,7 @@ const buttons = document.querySelectorAll(".content_btn button");
 const showSelected = document.querySelector(".header_selected span");
 const message = document.querySelector(".footer h2");
 const playBtn = document.querySelector(".play_btn");
-const rollDiceBtn = document.querySelector(".roll_dice");
+
 const scoreBoard = document.querySelector(".score span");
 const highScoreBoard = document.querySelector(".high_score span");
 
@@ -19,7 +19,7 @@ let startGame;
 let selectedNumber;
 let gameInterval;
 let disabled;
-let disabledRollDice;
+
 let highScore = 0;
 
 //Buttons disabled enabled handler
@@ -33,27 +33,19 @@ const disableEnableButtonHandler = function () {
   }
 };
 
-//Roll dice disabled enabled handler
-const rollDiceDisabledHandler = function () {
-  if (disabledRollDice === true) {
-    rollDiceBtn.setAttribute("disabled", "");
-  } else {
-    rollDiceBtn.removeAttribute("disabled");
-  }
-};
-
 // Reset active button handler
 const resetActiveBtnHandler = function () {
   for (const btn of buttons) {
-    if (btn.style.backgroundColor === "black")
-      btn.style.backgroundColor = "red";
+    if (btn.style.backgroundColor === "red")
+      btn.style.backgroundColor = "black";
+    btn.style.borderLeft = "4px solid red";
   }
 };
 
 // Reset game Handler
 const resetGame = () => {
   score = 0;
-  count = 10;
+  count = 5;
   diceNumber = 1;
   startGame = false;
   selectedNumber = 0;
@@ -64,9 +56,8 @@ const resetGame = () => {
   message.textContent = "Select a number";
   showSelected.textContent = "";
   disabled = false;
-  disabledRollDice = true;
+
   disableEnableButtonHandler();
-  rollDiceDisabledHandler();
   resetActiveBtnHandler();
 };
 resetGame();
@@ -121,9 +112,11 @@ const callDiceChangeHandler = function () {
     if (count === 0) {
       diceChangeHandler();
       messageHandler();
-      count = 10;
-      disabledRollDice = false;
-      rollDiceDisabledHandler();
+      setTimeout(() => {
+        AlertCall();
+      }, 2000);
+
+      count = 5;
       disabled = false;
       disableEnableButtonHandler();
       resetActiveBtnHandler();
@@ -152,14 +145,12 @@ for (let btn of buttons) {
   btn.addEventListener("click", onButtonClickHandler);
 }
 
-//Roll dice Button Handler
-rollDiceBtn.addEventListener("click", () => {
+function AlertCall() {
+  window.alert(`Roll the Dice`);
   startGame = true;
-  disabledRollDice = true;
-  rollDiceDisabledHandler();
   disabled = false;
   disableEnableButtonHandler();
   callDiceChangeHandler();
   showSelected.textContent = "";
   message.textContent = "Select a number";
-});
+}
